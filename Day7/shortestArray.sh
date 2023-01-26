@@ -7,6 +7,9 @@ do
 	let "count +=1"
 
 done
-#sortVal=${number[@]} | sort -n
+secoundMax=$(printf '%s\n' "${number[*]}" | sort -nu | tail -2 | head -1)
+secoundMin=$(printf '%s\n' "${number[*]}" | sort -nr | tail -2 | head -1)
 
-echo "${number[*]}"
+echo ${number[*]}
+echo "Secound Max Value :" $secoundMax
+echo "secound Min Value :" $secoundMin

@@ -11,21 +11,40 @@ echo "array is : ${number[*]}"
 maxVal=0
 for a in ${number[*]};
 do
-	if (( $a > $max ));
+	if (( $a > $maxVal ));
 	then 
-		max=$a;
+		maxVal=$a;
 	fi;
 done
 
 secoundMax=0;
 for b in ${number[*]};
 do
-	if (($b > $secoundMax && $b < $max ));
+	if (($b > $secoundMax && $b < $maxVal ));
 	then
 		secoundMax=$a;
 	fi;
 done
 
-min=
+min=${number[1]}
+for c in ${number[*]};
+do
+	if(( $c< $min ));
+	then
+		min=$a;
+	fi;
+done
+
+secoundMin=${number[1]}
+for d in ${number[*]};
+do
+	if (( $d < $secoundMax && $d > $min ));
+	then
+	secoundMin=$d;
+fi;
+  done
 
 
+
+echo "secound max value : "$maxVal
+echo "secound min value :"$secoundMin
